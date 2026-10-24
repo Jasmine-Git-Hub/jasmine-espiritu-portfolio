@@ -65,7 +65,7 @@ export function Hero() {
             */}
             <img
               src="/images/profile.jpg"
-              srcSet="/images/profile.jpg 842w"
+              srcSet="/images/profile.jpg 842w, /images/profile@2x.jpg 1684w"
               sizes="(min-width: 1024px) 40vw, 88vw"
               alt={`Portrait of ${profile.fullName}`}
               fetchPriority="high"
