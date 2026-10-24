@@ -2,6 +2,9 @@ import introAIPDF from '../assets/IntrotoModernAIUpdate20260409-31-mxhvn3.pdf';
 import shePDF from '../assets/e-certificate_ShecreateswithAI_127-127.pdf';
 import virtualAssistantPDF from '../assets/VirtualAssistant101.pdf';
 import brandingPDF from '../assets/BrandingwithAI.pdf';
+import cybersecurityCert from '../assets/cert-cybersecurity-awareness.jpg';
+import aiIotCert from '../assets/cert-community-ai-iot.png';
+import aiResearchCert from '../assets/cert-ai-research-ecosystems.jpg';
 
 export const profile = {
   firstName: 'Jasmine',
@@ -97,6 +100,19 @@ export const certifications: Certificate[] = [
 
 // Certificates of attendance / participation
 export const trainings: Certificate[] = [
+  { title: 'AI-Driven Research Ecosystems', issuer: 'Bestlink College of the Philippines', date: 'Oct 2026', href: aiResearchCert },
+  {
+    title: 'Community AI-IoT Projects: Tackling Real Problems with Solutions',
+    issuer: 'Bestlink College of the Philippines',
+    date: 'Oct 2026',
+    href: aiIotCert,
+  },
+  {
+    title: 'Cybersecurity Awareness',
+    issuer: 'Cybersecurity Society of the Philippines × Bestlink College',
+    date: 'Oct 2026',
+    href: cybersecurityCert,
+  },
   { title: 'Mindset, Money, Machines: Financial Literacy in the Age of AI', issuer: 'DICT ILCDB', date: 'May 2026' },
   { title: 'Branding in the Age of AI', issuer: 'DICT ILCDB', date: 'Apr 2026', href: brandingPDF },
   { title: 'She Creates with AI: Turning Ideas into Prompts', issuer: 'DICT ILCDB', date: 'Mar 2026', href: shePDF },
