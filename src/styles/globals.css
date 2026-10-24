@@ -1,0 +1,110 @@
+/* ---------- Base ---------- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+html, body { background: #1a1d21; color: #f2f0eb; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: #4f7cff; color: #fff; }
+
+/* Hide the native cursor only on devices with a real pointer */
+@media (hover: hover) and (pointer: fine) {
+  html.has-cursor, html.has-cursor * { cursor: none !important; }
+}
+
+/* ---------- Film grain / CRT overlay ---------- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 90;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.9s steps(5) infinite;
+}
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 91;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px);
+  mix-blend-mode: overlay;
+}
+.vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 89;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
+}
+
+/* ---------- Custom cursor ---------- */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 9999px;
+  transform: translate3d(-100px, -100px, 0);
+}
+.cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: #f2f0eb; }
+.cursor-ring {
+  width: 38px; height: 38px; margin: -19px 0 0 -19px;
+  border: 1px solid rgba(242,240,235,0.5);
+  mix-blend-mode: difference;
+  transition: width .3s, height .3s, margin .3s, background-color .3s, border-color .3s;
+  display: grid; place-items: center;
+  font: 500 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: .1em; text-transform: uppercase; color: #1a1d21;
+}
+.cursor-ring.is-hover {
+  width: 80px; height: 80px; margin: -40px 0 0 -40px;
+  background: #f2f0eb; border-color: transparent;
+}
+@media (hover: none), (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
+
+/* ---------- Hero mesh gradient (Dao-style) ---------- */
+.mesh {
+  background:
+    radial-gradient(60% 50% at 78% 30%, rgba(79,124,255,0.35), transparent 70%),
+    radial-gradient(40% 40% at 15% 85%, rgba(79,124,255,0.18), transparent 70%),
+    radial-gradient(50% 60% at 50% 50%, rgba(143,176,255,0.08), transparent 70%),
+    #1a1d21;
+}
+
+/* ---------- Glitch headline ---------- */
+.glitch { position: relative; display: inline-block; }
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  opacity: 0; pointer-events: none;
+}
+.glitch::before { color: #4f7cff; }
+.glitch::after { color: #ff4f7c; }
+.glitch:hover::before { opacity: .8; animation: glitch-a .35s steps(2) infinite; }
+.glitch:hover::after { opacity: .8; animation: glitch-b .35s steps(2) infinite reverse; }
+@keyframes glitch-a {
+  0% { clip-path: inset(10% 0 70% 0); transform: translate(-4px, -2px); }
+  50% { clip-path: inset(60% 0 10% 0); transform: translate(4px, 2px); }
+  100% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 1px); }
+}
+@keyframes glitch-b {
+  0% { clip-path: inset(70% 0 5% 0); transform: translate(4px, 1px); }
+  50% { clip-path: inset(5% 0 75% 0); transform: translate(-4px, -1px); }
+  100% { clip-path: inset(40% 0 30% 0); transform: translate(2px, -2px); }
+}
+
+/* SplitType wraps lines; mask them so words slide up from beneath */
+.split-line { overflow: hidden; padding-bottom: 0.06em; }
+
+.text-outline { color: transparent; -webkit-text-stroke: 1px rgba(242,240,235,0.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  .grain, .glitch::before, .glitch::after { animation: none !important; }
+}
