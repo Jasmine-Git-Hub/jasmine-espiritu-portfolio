@@ -21,7 +21,7 @@ export default {
       },
       fontSize: {
         // Fluid display sizes scale from phone to ultrawide
-        mega: ['clamp(4rem, 17vw, 18rem)', { lineHeight: '0.82', letterSpacing: '-0.01em' }],
+        mega: ['clamp(4rem, 15vw, 15rem)', { lineHeight: '0.82', letterSpacing: '-0.01em' }],
         huge: ['clamp(3rem, 11vw, 11rem)', { lineHeight: '0.85' }],
         big: ['clamp(2.25rem, 6vw, 5.5rem)', { lineHeight: '0.9' }],
       },

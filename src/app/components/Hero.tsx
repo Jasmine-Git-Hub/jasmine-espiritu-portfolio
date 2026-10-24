@@ -37,7 +37,7 @@ export function Hero() {
           <p data-hero-fade className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-glow">
             ● Open to internships & entry-level roles
           </p>
-          <h1 className="font-display text-mega uppercase">
+          <h1 className="whitespace-nowrap font-display text-mega uppercase">
             <span data-hero-line className="block overflow-hidden">
               <span className="glitch" data-text={profile.firstName} data-cursor="Hi!">
                 {profile.firstName}
