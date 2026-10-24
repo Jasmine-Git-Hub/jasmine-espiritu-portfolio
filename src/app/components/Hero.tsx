@@ -33,7 +33,7 @@ export function Hero() {
     <section ref={root} id="home" className="mesh relative flex min-h-[100svh] overflow-hidden">
       <div className="relative mx-auto grid w-full max-w-[1600px] grid-cols-1 items-end gap-8 px-5 pb-10 pt-28 md:px-10 lg:grid-cols-12 lg:pb-14">
         {/* Headline */}
-        <div data-hero-title className="relative z-20 lg:col-span-7">
+        <div data-hero-title className="relative z-20 lg:col-span-7 lg:pb-[10svh]">
           <p data-hero-fade className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-glow">
             ● Open to internships & entry-level roles
           </p>
@@ -72,8 +72,8 @@ export function Hero() {
               className="h-full w-full object-cover object-top"
               style={{
                 // Radial mask melts the white studio backdrop into the dark scene
-                maskImage: 'radial-gradient(ellipse 62% 70% at 50% 42%, #000 45%, transparent 78%)',
-                WebkitMaskImage: 'radial-gradient(ellipse 62% 70% at 50% 42%, #000 45%, transparent 78%)',
+                maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%)',
               }}
             />
             {/* Cinematic fade at the bottom */}
