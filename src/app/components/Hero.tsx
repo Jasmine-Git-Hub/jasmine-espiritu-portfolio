@@ -69,16 +69,15 @@ export function Hero() {
               sizes="(min-width: 1024px) 40vw, 88vw"
               alt={`Portrait of ${profile.fullName}`}
               fetchPriority="high"
-              className="h-full w-full object-cover object-top mix-blend-lighten brightness-[0.92] contrast-[1.08] saturate-[0.85]"
+              className="h-full w-full object-cover object-top"
               style={{
                 // Radial mask melts the white studio backdrop into the dark scene
                 maskImage: 'radial-gradient(ellipse 62% 70% at 50% 42%, #000 45%, transparent 78%)',
                 WebkitMaskImage: 'radial-gradient(ellipse 62% 70% at 50% 42%, #000 45%, transparent 78%)',
               }}
             />
-            {/* Cinematic fade at the bottom + cool tint */}
+            {/* Cinematic fade at the bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-azure/15 mix-blend-soft-light" />
           </div>
         </div>
 
