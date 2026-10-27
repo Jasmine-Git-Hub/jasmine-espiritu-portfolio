@@ -75,6 +75,7 @@ export const projects: Project[] = [
     description:
       'A web-based job portal that connects applicants and employers, from job listings to applications.',
     tags: ['TypeScript', 'React', 'Firebase'],
+    links: [{ label: 'GitHub', href: 'https://github.com/Jasmine-Git-Hub/CrimsonCloudHR' }],
   },
 ];
 
