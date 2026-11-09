@@ -5,6 +5,7 @@ import brandingPDF from '../assets/BrandingwithAI.pdf';
 import cybersecurityCert from '../assets/cert-cybersecurity-awareness.jpg';
 import aiIotCert from '../assets/cert-community-ai-iot.png';
 import aiResearchCert from '../assets/cert-ai-research-ecosystems.jpg';
+import NationalCertificate from '../assets/nc.pdf';
 
 export const profile = {
   firstName: 'Jasmine',
@@ -94,6 +95,12 @@ export type Certificate = {
 
 // Credentials earned by completing a course or assessment
 export const certifications: Certificate[] = [
+  {
+    title: 'Computer Systems Servicing National Certificate II',
+    issuer: 'Technical Education and Skills Development Authority',
+    date: 'Nov 2026',
+    href: NationalCertificate,
+  },
   {
     title: 'Web Development Fundamentals',
     issuer: 'IBM SkillsBuild',
